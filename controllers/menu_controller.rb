@@ -13,7 +13,8 @@ require_relative "../models/address_book"
      puts "2 - Create an entry"
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
-     puts "5 - Exit"
+     puts "5 - Delete All Entries"
+     puts "6 - Exit"
      print "Enter your selection: "
 
      selection = gets.to_i
@@ -30,13 +31,16 @@ require_relative "../models/address_book"
      when 3
        system "clear"
        search_entries
-       main_menu5
-       
+       main_menu
      when 4
        system "clear"
        read_csv
        main_menu
      when 5
+       system "clear"
+       detonate
+       main_menu
+     when 6
        puts "Good-bye!"
  # #8
        exit(0)
@@ -111,7 +115,13 @@ require_relative "../models/address_book"
     puts "#{file_name} is not a valid CSV file, please enter the name of a valid CSV file"
     read_csv
    end
+   
+   def detonate
+    @address_book.detonate
+   end
+   
  end
+
  
  def entry_submenu(entry)
  # #16
