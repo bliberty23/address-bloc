@@ -45,7 +45,7 @@ class AddressBook
         lower = 0
         upper = entries.length - 1
         
-        while upper <= lower
+        while lower <= upper
         
             mid = (lower + upper) /2
             mid_name = entries[mid].name
